@@ -3,5 +3,12 @@
 
   "scripts": {
     "start": "node index.js"
+  },
+  "engines": {
+      "node": "5.10.1"
+    , "npm": "3.8.6"    
+  }, 
+  "dependencies": {
+    "express": "4.13.4"
   }
 }
