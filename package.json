@@ -1,0 +1,7 @@
+{
+  "name": "CS410Project",
+
+  "scripts": {
+    "start": "node index.js"
+  }
+}
