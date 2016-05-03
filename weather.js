@@ -5,3 +5,4 @@ wunderground.conditions().request('61820', function(err, response){
     console.log(response);
 })
 // https://github.com/cendrizzi/wundergroundnode
+//https://www.wunderground.com/weather/api/d/docs?d=index&MR=1
