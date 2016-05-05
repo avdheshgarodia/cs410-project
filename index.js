@@ -8,15 +8,15 @@ app.get('/', function(request, response) {
   response.send('YAY HIIIII!')
 })
 
-app.get('/process_get', function (req, res) {
+// app.get('/process_get', function (req, res) {
 
-   // Prepare output in JSON format
-   response = {
-       location:req.query.location
-   };
-   console.log(response);
-   res.end(JSON.stringify(response));
-})
+//    // Prepare output in JSON format
+//    response = {
+//        location:req.query.location
+//    };
+//    console.log(response);
+//    res.end(JSON.stringify(response));
+// })
 
 app.use(express.static('public'));
 
@@ -57,7 +57,7 @@ app.get('/twitter',function(request, response)
   	access_token_key: '725077273272045568-aIqv5U2DhcfUvxdZiQpE5Ac45hqYiRb',
   	access_token_secret: 'QhKt1UohTSuHpbPDHZeR98DfnnPvvrffCcRfXr8GS9YzV'
 	});
-	client.get('search/tweets', {q: 'UIUC'}, function(error, tweets, res){
+	client.get('search/tweets', {q:'UIUC',geocode: '40.0910689,-88.2173631,10mi'}, function(error, tweets, res){
 	
 	data = []
 	tweets_content = tweets.statuses
