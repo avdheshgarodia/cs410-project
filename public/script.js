@@ -20,12 +20,19 @@ $(".submit_button").on("click", function()
 	// {
 	// 	console($("#input").val());
 	// });
-		console($("#input").val());
+		var query = $("#input").val();
+		console.log(query);
 		
-		$.get("/yelp",function(data, status)
+		$.get("/yelp?loc="+query,function(data, status)
 		{
-        	alert("Data: " + data + "\nStatus: " + status);
+        	console.log("Data: " + data + "\nStatus: " + status);
     	});
+
+		$.get("/twitter?q="+query,function(data, status)
+		{
+        	console.log("Data: " + data + "\nStatus: " + status);
+    	});
+
 });
 
 

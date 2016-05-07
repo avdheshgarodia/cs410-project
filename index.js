@@ -21,6 +21,7 @@ app.get('/', function(request, response) {
 app.use(express.static('public'));
 
 app.get('/yelp', function(request, response) {
+	console.log(request)
 	var Yelp = require('yelp');
 
 	var yelp = new Yelp({
@@ -30,7 +31,7 @@ app.get('/yelp', function(request, response) {
   		token_secret: 'Z_9p9w87sQ7RHHG6-OFiLF7-0bc',
 	});
 
-	yelp.search({ term: 'food', location: 'Champaign, Il', sort: 0, limit: 20})
+	yelp.search({ term: 'food', location: request.query.loc, sort: 0, limit: 20})
 	.then(function (data) {
   		//response.send(data);
   		//response.send('test');
@@ -57,7 +58,7 @@ app.get('/twitter',function(request, response)
   	access_token_key: '725077273272045568-aIqv5U2DhcfUvxdZiQpE5Ac45hqYiRb',
   	access_token_secret: 'QhKt1UohTSuHpbPDHZeR98DfnnPvvrffCcRfXr8GS9YzV'
 	});
-	client.get('search/tweets', {q:'UIUC',geocode: '40.0910689,-88.2173631,10mi'}, function(error, tweets, res){
+	client.get('search/tweets', {q:request.query.q,geocode: '40.0910689,-88.2173631,10mi'}, function(error, tweets, res){
 	
 	data = []
 	tweets_content = tweets.statuses
