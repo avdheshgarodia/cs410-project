@@ -23,7 +23,7 @@ $("#submit_button").on("click", function()
 		var query = $("#input").val();
 		console.log(query);
 		
-		$.get("/yelp?loc="+query,function(data, status)
+		$.get("/yelp?loc="+query+"&key=food",function(data, status)
 		{
         	console.log("Data: " + data + "\nStatus: " + status);
         	var len = (5<data.length)? 5: data.length
@@ -33,21 +33,46 @@ $("#submit_button").on("click", function()
         	}	
     	});
 
-		$.get("/twitter?q="+query,function(data, status)
+    	$.get("/yelp?loc="+query+"&key=things%20to%20do",function(data, status)
 		{
         	console.log("Data: " + data + "\nStatus: " + status);
+        	var len = (5<data.length)? 5: data.length
+        	for(i = 0;i<len;i++)
+        	{
+        		// $.get("/twitter?q="+data[i]+"&loc=" + query,function(data, status)
+        		$("#places").append('<li>'+data[i]+'</li>')
+        	}	
+    	});
+
+		$.get("/twitter?q="+query+"&loc=" + query,function(data, status)
+		{
+        	console.log("Data: " + data + "\nStatus: " + status);
+        	//var len = (10<data.length)? 10: data.length
+        	for(i = 0;i<data.length;i++)
+        	{
+        		if(data[i].sentiment!=0)
+        		{
+        			var tweet = "tweet : "+data[i].tweet+"; sentiment : "+data[i].sentiment 
+        			$("#trending").append('<li>'+tweet+'</li>')
+        		}
+        	}
+
     	});
     	$.get("/weather",function(data, status)
 		{
         	console.log("Data: " + data + "\nStatus: " + status);
-        	var current_conditions = "temp : "+data.current_observation.temp_c +" feel like " + data.current_observation.feelslike_c;
-        	$("#restaurants").append('<li>'+data[i]+'</li>');
-        	
-        	// temp_c, feelslike_c
+        	var current_conditions = "temp : "+data.current_observation.temp_c +"; feel like : " + data.current_observation.feelslike_c;
+        	$("#forecast").append('<li>'+current_conditions+'</li>');
+        	for(i=0;i<(data.forecast.txt_forecast.forecastday.length);i+=2)
+        	{
+        		var daytime = data.forecast.txt_forecast.forecastday[i].fcttext;
+        		var night = data.forecast.txt_forecast.forecastday[i+1].fcttext;
+        		var forecast = "daytime : "+daytime+"; night : "+night
+        		$("#forecast").append('<li>'+forecast+'</li>');
+        	}
     	});
 
 });
-
 
 
 
