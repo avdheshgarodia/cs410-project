@@ -2,39 +2,49 @@
 <html>
 
 <head>
-  <title>Our Company</title>
-  <link href="site.css" rel="stylesheet">
+    <title>410 Project</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="site.css" rel="stylesheet">
+    
 </head>
 
 <body>
 
-<nav id="nav01"></nav>
-<div id="main">
-  <h1>What's happening where?</h1> 
-  <h4>Enter A Location</h4> 
+    <div id="main" class="container">
+        <h1>What's happening where?</h1>
+        <h4>Enter A Location</h4>
 
-  <input type="text" name="location" id = "input"></input>
-  <button type="submit" value="Submit" id="submit_button">Go</button>
+        <input type="text" name="location" id="input"></input>
+        <button type="submit" value="Submit" id="submit_button">Go</button>
 
-  <h5> Restuarants </h5>
-  <ul id = "restaurants"></ul>
+        <h5> Restuarants </h5>
+        <ul id="restaurants"></ul>
 
-  <h5> Weather forecast </h5>
-  <ul id = "forecast"></ul> 
+        <h5> Weather forecast </h5>
+        <ul id="forecast"></ul>
 
-  <h5> Places </h5>
-  <ul id = "places"></ul> 
+        <h5> Places </h5>
+        <ul id="places"></ul>
 
-  <h5> Trending </h5>
-  <ul id = "trending"></ul> 
+        <h5> Trending </h5>
+        <ul id="trending"></ul>
 
-  <footer id="foot01"></footer>
+        <footer id="foot01"></footer>
 
-</div>
+    </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="script.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="script.js"></script>
 
 
 </body>
+
 </html>
