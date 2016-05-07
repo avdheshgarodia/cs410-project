@@ -5,6 +5,6 @@ var client = new Twitter({
   access_token_key: '725077273272045568-aIqv5U2DhcfUvxdZiQpE5Ac45hqYiRb',
   access_token_secret: 'QhKt1UohTSuHpbPDHZeR98DfnnPvvrffCcRfXr8GS9YzV'
 });
-client.get('search/tweets', {q: 'UIUC'}, function(error, tweets, response){
+client.get('geo/search', {query: 'Champaign'}, function(error, tweets, response){
    console.log(tweets);
 });

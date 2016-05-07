@@ -14,7 +14,7 @@ document.getElementById("nav01").innerHTML =
 "</ul>";
 
 
-$(".submit_button").on("click", function()
+$("#submit_button").on("click", function()
 {
 	// $.get("/twitter",function(data,status)
 	// {
