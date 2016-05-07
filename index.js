@@ -86,8 +86,9 @@ app.get('/weather',function(request,response)
 	var Wunderground = require('wundergroundnode');
 	var myKey = 'f5715763f3d6a541';
 	var wunderground = new Wunderground(myKey);
-	wunderground.conditions().request('61820', function(err, res){
-    response.send(res);
+	var query = 
+	wunderground.conditions().forecast().request('Chicago', function(err, res){
+    	response.send(res);
 	})
 // https://github.com/cendrizzi/wundergroundnode
 //https://www.wunderground.com/weather/api/d/docs?d=index&MR=

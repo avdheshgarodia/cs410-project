@@ -26,11 +26,24 @@ $("#submit_button").on("click", function()
 		$.get("/yelp?loc="+query,function(data, status)
 		{
         	console.log("Data: " + data + "\nStatus: " + status);
+        	var len = (5<data.length)? 5: data.length
+        	for(i = 0;i<len;i++)
+        	{
+        		$("#restaurants").append('<li>'+data[i]+'</li>')
+        	}	
     	});
 
 		$.get("/twitter?q="+query,function(data, status)
 		{
         	console.log("Data: " + data + "\nStatus: " + status);
+    	});
+    	$.get("/weather",function(data, status)
+		{
+        	console.log("Data: " + data + "\nStatus: " + status);
+        	var current_conditions = "temp : "+data.current_observation.temp_c +" feel like " + data.current_observation.feelslike_c;
+        	$("#restaurants").append('<li>'+data[i]+'</li>');
+        	
+        	// temp_c, feelslike_c
     	});
 
 });
