@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<header>
     <title>410 Project</title>
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,39 +12,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link href="site.css" rel="stylesheet">
-    
-</head>
-
-<body>
-
-    <div id="main" class="container">
-        <h1>What's happening where?</h1>
-        <h4>Enter A Location</h4>
-
-        <input type="text" name="location" id="input"></input>
-        <button type="submit" value="Submit" id="submit_button">Go</button>
-
-        <h5> Restuarants </h5>
-        <ul id="restaurants"></ul>
-
-        <h5> Weather forecast </h5>
-        <ul id="forecast"></ul>
-
-        <h5> Places </h5>
-        <ul id="places"></ul>
-
-        <h5> Trending </h5>
-        <ul id="trending"></ul>
-
-        <footer id="foot01"></footer>
-
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                            <div class="row">
+                <div class="col s6 offset-s2">
+                    <input type="text" name="location" id="input" placeholder="Enter A Location"></input>
+                </div>
+                <div class="col s1">
+                    <button class="btn-large waves-effect waves-light" type="submit" name="action" id="submit_button"><i class="material-icons">search</i>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </nav>
     </div>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="script.js"></script>
+</header>
 
 
-</body>
+
+<main>
+
+    <body>
+
+        <div id="main" class="container">
+
+            <div class="row">
+                <div class="col s12 m12 l6">
+                    <div class="card">
+                        <div class="card-title">
+                            <p>Restaurants</p>
+                        </div>
+                        <div class="card-content">
+                            <ul id="restaurants"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m12 l6">
+                    <div class="card">
+                        <div class="card-title">
+                            <p>Weather</p>
+                        </div>
+                        <div class="card-content">
+                            <ul id="forecast"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col s12 m12 l6">
+                    <div class="card">
+                        <div class="card-title">
+                            <p>Places</p>
+                        </div>
+                        <div class="card-content">
+                            <ul id="places"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m12 l6">
+                    <div class="card">
+                        <div class="card-title">
+                            <p>Trending</p>
+                        </div>
+                        <div class="card-content">
+                            <ul id="trending"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script src="script.js"></script>
+
+
+    </body>
+</main>
+
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
 
 </html>
